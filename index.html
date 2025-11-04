@@ -7,51 +7,197 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>📚 Biblioteca Digital Comunitária</h1>
-        <p>Conhecimento e imaginação ao alcance de um clique.</p>
-    </header>
+    <!-- Tela Inicial (Home) -->
+    <div id="homeScreen">
+        <header>
+            <h1>📚 Community digital library</h1>
+            <p>Busque o livro que você procura conosco</p>
+        </header>
 
-    <main>
-        <section class="intro">
-            <h2>Bem-vindo à Nossa Biblioteca!</h2>
-            <p>Explore nosso acervo digital de livros, revistas e materiais educativos. Tudo isso gratuitamente para a comunidade.</p>
-        </section>
-
-        <section class="catalog">
-            <h2>Explore nosso Catálogo</h2>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Buscar por título, autor ou assunto...">
-                <button id="searchBtn">Buscar</button>
-            </div>
-
-            <div class="featured">
-                <h3>Destaques</h3>
-                <div class="book-grid" id="bookGrid">
-                    <!-- Livros em destaque serão inseridos aqui pelo JavaScript -->
+        <main>
+            <section class="intro">
+                <h2>Bem vindo</h2>
+                <p>Explore nosso acervo digital de livros, revistas e materiais educativos. Tudo isso gratuitamente para a comunidade. Um espaço aberto para compartilhar conhecimento e incentivar a leitura.</p>
+                
+                <div class="home-buttons">
+                    <button id="registerBtn" class="btn-primary">Cadastrar-se</button>
+                    <button id="loginBtn" class="btn-secondary">Login</button>
                 </div>
+            </section>
+
+            <section class="catalog" id="catalogSection">
+                <h2>Explore nosso Catálogo</h2>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Buscar por título, autor ou assunto...">
+                    <button id="searchBtn">Buscar</button>
+                </div>
+
+                <div class="featured">
+                    <h3>Destaques</h3>
+                    <div class="book-grid" id="bookGrid">
+                        <!-- Livros em destaque serão inseridos aqui pelo JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="access">
+                <h2>Como acessar?</h2>
+                <p>Você pode acessar nossa biblioteca de qualquer lugar:</p>
+                <ul>
+                    <li><strong>Online:</strong> Faça login no nosso site com seu CPF ou email.</li>
+                    <li><strong>Nas Estações:</strong> Visite nossas estações de leitura no Cesmar e na Praça Central.</li>
+                </ul>
+            </section>
+
+            <section class="activities">
+                <h2>Atividades e Clubes</h2>
+                <p>Participe dos nossos clubes de leitura e oficinas!</p>
+                <ul>
+                    <li>📚 Clube do Livro - Quinzenalmente</li>
+                    <li>✍️ Oficina de Escrita Criativa - Mensalmente</li>
+                    <li>📖 Hora do Conto (para crianças) - Semanalmente</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Tela de Login -->
+    <div id="loginScreen" class="screen" style="display: none;">
+        <div class="auth-container">
+            <div class="back-arrow">
+                <a href="#" id="backToHome">&larr; Voltar para Início</a>
             </div>
-        </section>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Senha</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+            <div class="auth-links">
+                <a href="#" id="forgotPasswordLink">Esqueceu a senha?</a>
+                <a href="#" id="createAccountLink">Criar nova conta</a>
+            </div>
+            <div class="demo-login">
+                <p>Para testes:</p>
+                <button id="demoLoginBtn" class="btn-secondary">Entrar como Usuário de Demonstração</button>
+            </div>
+        </div>
+    </div>
 
-        <section class="access">
-            <h2>Como acessar?</h2>
-            <p>Você pode acessar nossa biblioteca de qualquer lugar:</p>
-            <ul>
-                <li><strong>Online:</strong> Faça login no nosso site com seu CPF ou email.</li>
-                <li><strong>Nas Estações:</strong> Visite nossas estações de leitura no Cesmar e na Praça Central.</li>
-            </ul>
-        </section>
+    <!-- Tela de Cadastro -->
+    <div id="registerScreen" class="screen" style="display: none;">
+        <div class="auth-container">
+            <div class="back-arrow">
+                <a href="#" id="registerBackToHome">&larr; Voltar para Início</a>
+            </div>
+            <h2>Cadastro</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Nome completo</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Senha</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar senha</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Criar conta</button>
+            </form>
+            <div class="auth-links">
+                <a href="#" id="backToLoginLink">Voltar para login</a>
+            </div>
+        </div>
+    </div>
 
-        <section class="activities">
-            <h2>Atividades e Clubes</h2>
-            <p>Participe dos nossos clubes de leitura e oficinas!</p>
-            <ul>
-                <li>📚 Clube do Livro - Quinzenalmente</li>
-                <li>✍️ Oficina de Escrita Criativa - Mensalmente</li>
-                <li>📖 Hora do Conto (para crianças) - Semanalmente</li>
-            </ul>
-        </section>
-    </main>
+    <!-- Tela de Confirmação de Código -->
+    <div id="confirmationScreen" class="screen" style="display: none;">
+        <div class="auth-container">
+            <div class="back-arrow">
+                <a href="#" id="confirmationBackToHome">&larr; Voltar para Início</a>
+            </div>
+            <h2>Confirmação de Acesso</h2>
+            <p>Um código de confirmação foi enviado para o seu e-mail.</p>
+            <p>Por favor, digite o código de 6 dígitos:</p>
+            <form id="confirmationForm">
+                <div class="form-group">
+                    <input type="text" id="confirmationCode" placeholder="Código de 6 dígitos" maxlength="6" required>
+                </div>
+                <button type="submit" class="btn-primary">Confirmar acesso</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tela Principal (após login) -->
+    <div id="mainScreen" class="screen" style="display: none;">
+        <header class="main-header">
+            <div class="back-arrow">
+                <a href="#" id="mainBackToHome">&larr; Voltar para Início</a>
+            </div>
+            <h1>📚 Community digital library</h1>
+            <div class="user-actions">
+                <span id="userNameDisplay"></span>
+                <button id="logoutBtn">Sair</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="catalog">
+                <h2>Explore nosso Catálogo</h2>
+                <div class="search-bar">
+                    <input type="text" id="mainSearchInput" placeholder="Buscar por título, autor, gênero ou palavra-chave...">
+                    <button id="mainSearchBtn">Buscar</button>
+                </div>
+                
+                <div class="category-filter">
+                    <label for="categoryFilter">Filtrar por categoria:</label>
+                    <select id="categoryFilter">
+                        <option value="all">Todas as categorias</option>
+                    </select>
+                </div>
+
+                <div class="featured">
+                    <h3>Destaques</h3>
+                    <div class="book-grid" id="mainBookGrid">
+                        <!-- Livros em destaque serão inseridos aqui pelo JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="resources-section">
+                <h2>Minha Biblioteca</h2>
+                <div class="user-resources">
+                    <button onclick="showFavorites()">Favoritos <span class="count">0</span></button>
+                    <button onclick="showHistory()">Histórico</button>
+                    <button onclick="showReadingHistory()">Lidos Recentemente</button>
+                </div>
+                
+                <div class="favorites-section">
+                    <h3>Meus Favoritos</h3>
+                    <div class="favorites-grid" id="favoritesGrid">
+                        <!-- Livros favoritos serão inseridos aqui -->
+                    </div>
+                </div>
+                
+                <div class="reading-history">
+                    <h3>Lidos Recentemente</h3>
+                    <div id="readingHistoryList"></div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2025 Centro Social Cesmar</p>
