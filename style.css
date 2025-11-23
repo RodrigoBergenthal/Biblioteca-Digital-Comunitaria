@@ -240,13 +240,14 @@ h3 {
 .carousel-container {
     position: relative;
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
-    background: linear-gradient(120deg, #dbdbd5, #cac0ae);
-    padding: 2rem 0;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(120deg, #e3f2fd, #bbdefb);
+    padding: 0;
 }
-
 .carousel-wrapper {
     display: flex;
     width: 100%;
