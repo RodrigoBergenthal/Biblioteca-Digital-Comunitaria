@@ -17,6 +17,29 @@ header {
     padding: 1rem;
     text-align: center;
     position: relative;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 2rem auto 0 auto;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #3a3833;
+}
+
+header p {
+    font-size: 1.3em;
+    opacity: 0.9;
+    margin: 0.5rem 0 0 0;
+    color: #4d4d45;
+}
+
+.tagline {
+    font-style: italic;
+    opacity: 0.95;
+    color: #5a5a51;
+    margin: 0.5rem 0;
 }
 
 .header-top {
@@ -125,9 +148,14 @@ header p {
     color: #5a5a51;
 }
 
-/* Ajustes para melhorar contraste no cabeçalho e animação da frase de efeito */
+/* Remover estilo que força texto branco no cabeçalho para permitir a paleta correta */
 header h1, header p, header .tagline {
-    color: white !important;
+    color: #3a3833;
+}
+
+/* Estilo específico para o cabeçalho principal para manter contraste */
+header {
+    color: #3a3833;
 }
 
 .tagline {
@@ -227,19 +255,29 @@ h3 {
 
 /* Estilo para o container do carrossel de destaques */
 .featured-carousel {
-    margin: 2rem 0;
-    padding-bottom: 0;
+    margin: 2rem auto;
+    padding: 0;
+    max-width: 1000px;
 }
 
 .featured-carousel h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #3a3833;
+    background: linear-gradient(135deg, #2196f3, #0d47a1);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2em;
+    padding: 10px;
 }
 
 .carousel-container {
     position: relative;
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
     background: linear-gradient(120deg, #dbdbd5, #cac0ae);
@@ -318,6 +356,112 @@ h3 {
     color: #4d4d45;
     line-height: 1.6;
     margin: 0;
+}
+
+/* Estilos responsivos para o carrossel */
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 1rem 0;
+    }
+
+    .book-highlight {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .book-cover-large {
+        width: 120px;
+        height: 180px;
+        margin-bottom: 1rem;
+    }
+
+    .book-info-large {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .carousel-controls {
+        position: static;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        transform: none;
+    }
+
+    .prev-btn, .next-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin: 0 5px;
+    }
+
+    .carousel-indicators {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-cover-large {
+        width: 100px;
+        height: 150px;
+    }
+
+    .book-info-large {
+        padding: 0 0.5rem;
+    }
+
+    .book-info-large h3 {
+        font-size: 1.3em;
+    }
+
+    .book-info-large .author {
+        font-size: 1.1em;
+    }
+
+    .book-info-large .description {
+        font-size: 0.95em;
+    }
+
+    .prev-btn, .next-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+/* Estilo para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .book-cover-large {
+        width: 130px;
+        height: 190px;
+    }
+
+    .book-info-large {
+        max-width: 70%;
+    }
+
+    .book-info-large h3 {
+        font-size: 1.6em;
+    }
+
+    .book-info-large .author {
+        font-size: 1.15em;
+    }
+
+    .book-info-large .description {
+        font-size: 1em;
+    }
+
+    .prev-btn, .next-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
 }
 
 .carousel-controls {
@@ -466,27 +610,511 @@ h3 {
     border-top: 1px dashed #ccc;
 }
 
-/* Estilos para outras seções */
-section {
-    background-color: #f9f8f5; /* Fundo mais claro da paleta */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-left: 5px solid #cac0ae; /* Borda na tonalidade da paleta */
+/* Regras de media para responsividade */
+@media (max-width: 768px) {
+    /* Layout geral para dispositivos menores */
+    main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    /* Estilos para o carrossel em dispositivos móveis */
+    .featured-carousel {
+        margin: 1rem auto;
+        max-width: 95%;
+        padding: 0 10px;
+    }
+
+    .featured-carousel h2 {
+        font-size: 1.8em;
+        padding: 5px;
+    }
+
+    .carousel-container {
+        padding: 1rem 0;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .book-highlight {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .book-cover-large {
+        width: 100px;
+        height: 150px;
+    }
+
+    .book-info-large {
+        max-width: 100%;
+        padding: 0 0.5rem;
+        text-align: center;
+    }
+
+    .book-info-large h3 {
+        font-size: 1.3em;
+    }
+
+    .book-info-large .author {
+        font-size: 1em;
+    }
+
+    .book-info-large .description {
+        font-size: 0.9em;
+    }
+
+    .carousel-controls {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 10px;
+    }
+
+    .prev-btn, .next-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin: 0 5px;
+    }
+
+    .carousel-indicators {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* Estilos para seções Netflix em dispositivos móveis */
+    .access-netflix-style, .clubs-netflix-style {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .access-option, .club-option {
+        padding: 1.2rem;
+    }
+
+    .access-option .icon, .club-option .icon {
+        font-size: 2.5rem;
+    }
+
+    .access-option h3, .club-option h3 {
+        font-size: 1.2em;
+    }
+
+    /* Estilos para a tela principal após login */
+    .main-header {
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .back-arrow {
+        order: -1;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .back-arrow a {
+        color: white;
+    }
+
+    .user-actions {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    /* Estilos para o grid de livros em dispositivos móveis */
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .book-card {
+        margin-bottom: 10px;
+    }
+
+    .book-cover {
+        height: 150px;
+    }
+
+    /* Estilos para os botões da tela inicial */
+    .home-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    /* Estilo para telas de autenticação em dispositivos móveis */
+    .auth-container {
+        margin: 1rem;
+        padding: 1.5rem;
+        max-width: 95%;
+    }
+
+    .featured, .most-read-books-main {
+        padding: 0 0.5rem;
+    }
 }
 
-h2 {
-    color: #3a3833;
-    border-bottom: 1px solid #d1cdc3;
+@media (max-width: 480px) {
+    /* Estilos para telas muito pequenas */
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .tagline {
+        font-size: 0.9em;
+    }
+
+    .book-cover-large {
+        width: 100px;
+        height: 150px;
+    }
+
+    .book-info-large h3 {
+        font-size: 1.3em;
+    }
+
+    .book-info-large .author {
+        font-size: 1em;
+    }
+
+    .access-options, .club-options {
+        grid-template-columns: 1fr;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .book-cover {
+        height: 120px;
+    }
+
+    .book-info h4 {
+        font-size: 0.9em;
+    }
+
+    .book-info .author {
+        font-size: 0.75em;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 95%;
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Estilo para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 15px;
+    }
+
+    .book-cover {
+        height: 160px;
+    }
+
+    .book-cover-large {
+        width: 150px;
+        height: 200px;
+    }
+
+    .access-options, .club-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carousel-controls {
+        gap: 5px;
+    }
+}
+
+/* Estilo para telas muito grandes */
+@media (min-width: 1200px) {
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .main-content, main {
+        max-width: 1200px;
+    }
+}
+
+/* Estilos responsivos para seções do catálogo */
+.catalog section {
+    padding: 1.2rem;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#searchInput, #mainSearchInput {
+    border-radius: 5px;
+    padding: 12px;
+}
+
+#searchBtn, #mainSearchBtn {
+    border-radius: 5px;
+    padding: 12px 20px;
+    margin-top: 0.5rem;
+    align-self: flex-start;
+}
+
+.category-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.category-filter label {
+    align-self: flex-start;
+}
+
+.category-filter select {
+    align-self: flex-start;
+    min-width: 250px;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+    }
+
+    #searchInput, #mainSearchInput {
+        border-radius: 5px 5px 0 0;
+    }
+
+    #searchBtn, #mainSearchBtn {
+        border-radius: 0 0 5px 5px;
+        align-self: stretch;
+    }
+
+    .category-filter {
+        margin-top: 1rem;
+    }
+
+    .category-filter select {
+        min-width: 100%;
+    }
+}
+
+/* Estilos para a grade de livros */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 18px;
+    margin-top: 1rem;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 280px;
+}
+
+.book-cover {
+    width: 100%;
+    height: 180px;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-info {
+    width: 100%;
+    padding: 0.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Estilos para seções de recursos */
+.resources-section {
+    background-color: #f0f7ff;
+    border-left: 5px solid #4caf50;
+    margin-top: 2rem;
+    padding: 1.5rem;
+}
+
+.user-resources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.user-resources button {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.user-resources button:hover {
+    background-color: #388e3c;
+}
+
+/* Estilos para seções de favoritos e histórico */
+.favorites-section, .reading-history {
+    margin-top: 1.5rem;
+}
+
+.favorites-section h3, .reading-history h3 {
+    color: #0d47a1;
+    border-bottom: 1px solid #bbdefb;
     padding-bottom: 0.5rem;
     margin-top: 0;
-    font-size: 1.8em;
+    font-size: 1.3em;
 }
 
-h3 {
-    color: #5a5a51;
-    margin-top: 1.5rem;
+/* Estilos para a seção de atividades */
+.activities {
+    background-color: #f9f8f5;
+    border-left: 5px solid #8d6e63; /* Cor mais escura da paleta */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.activities ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.activities li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.activities li::before {
+    content: "📖";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Estilos para a seção de livros mais lidos */
+.most-read-books {
+    background-color: #f9f8f5;
+    border-left: 5px solid #5c6bc0; /* Cor da paleta */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilos para a seção de submissão de livros */
+.book-submission {
+    background-color: #f9f8f5;
+    border-left: 5px solid #66bb6a; /* Cor da paleta */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilos para a seção de clube do livro */
+.book-club-registration {
+    background-color: #f9f8f5;
+    border-left: 5px solid #ffab40; /* Cor da paleta */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilos para botões de ação em cards de livros */
+.book-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-read, .btn-download, .btn-favorite {
+    flex: 1;
+    padding: 6px 10px;
+    font-size: 0.85em;
+}
+
+/* Estilos para telas de autenticação */
+.auth-container {
+    max-width: 400px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #90caf9;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilo do footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #3a3833; /* Tom escuro da paleta */
+    color: white;
+    margin-top: 2rem;
 }
 
 main {
@@ -1455,11 +2083,13 @@ footer {
 .carousel-container {
     position: relative;
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     background: linear-gradient(120deg, #e3f2fd, #bbdefb);
-    padding: 2rem;
+    padding: 0;
 }
 
 .carousel-wrapper {
