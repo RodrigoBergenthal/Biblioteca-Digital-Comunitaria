@@ -3,27 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Digital Comunitária</title>
+    <title>BDC - Biblioteca Digital Comunitária</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Tela Inicial (Home) -->
     <div id="homeScreen">
         <header>
-            <h1>📚 Community digital library</h1>
+            <div class="header-top">
+                <div class="login-signup-bar">
+                    <button id="headerLoginBtn" class="btn-secondary">Login</button>
+                    <button id="headerRegisterBtn" class="btn-primary">Cadastrar-se</button>
+                </div>
+            </div>
+            <h1>📚 BDC</h1>
             <p>Busque o livro que você procura conosco</p>
+            <p class="tagline">"Conhecimento é o tesouro mais valioso que podemos compartilhar"</p>
         </header>
 
         <main>
-            <section class="intro">
-                <h2>Bem vindo</h2>
-                <p>Explore nosso acervo digital de livros, revistas e materiais educativos. Tudo isso gratuitamente para a comunidade. Um espaço aberto para compartilhar conhecimento e incentivar a leitura.</p>
-                
-                <div class="home-buttons">
-                    <button id="registerBtn" class="btn-primary">Cadastrar-se</button>
-                    <button id="loginBtn" class="btn-secondary">Login</button>
+            <section class="featured-carousel">
+                <h2>Destaque</h2>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide active">
+                            <div class="book-highlight">
+                                <div class="book-cover-large">
+                                    <img src="https://covers.openlibrary.org/b/id/100902-M.jpg" alt="Memórias Póstumas de Brás Cubas">
+                                </div>
+                                <div class="book-info-large">
+                                    <h3>Memórias Póstumas de Brás Cubas</h3>
+                                    <p class="author">Machado de Assis</p>
+                                    <p class="description">Obra-prima do realismo brasileiro, narrada por um defunto que recorda sua vida com ironia e humor.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="book-highlight">
+                                <div class="book-cover-large">
+                                    <img src="https://covers.openlibrary.org/b/id/8458564-M.jpg" alt="O Cortiço">
+                                </div>
+                                <div class="book-info-large">
+                                    <h3>O Cortiço</h3>
+                                    <p class="author">Aluísio Azevedo</p>
+                                    <p class="description">Representação do naturalismo brasileiro, retratando a vida no cortiço carioca.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="book-highlight">
+                                <div class="book-cover-large">
+                                    <img src="https://covers.openlibrary.org/b/id/123456-M.jpg" alt="Iracema">
+                                </div>
+                                <div class="book-info-large">
+                                    <h3>Iracema</h3>
+                                    <p class="author">José de Alencar</p>
+                                    <p class="description">Ícone do indianismo no Brasil, que narra o amor entre Iracema e Martim.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="prev-btn" id="prevSlide">&lt;</button>
+                        <button class="next-btn" id="nextSlide">&gt;</button>
+                    </div>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                        <span class="indicator" data-index="2"></span>
+                    </div>
                 </div>
             </section>
+
+             <!-- Não adicionamos mais a seção de boas-vindas tradicional, mantendo foco no carrossel de destaques -->
 
             <section class="catalog" id="catalogSection">
                 <h2>Explore nosso Catálogo</h2>
@@ -33,30 +85,75 @@
                 </div>
 
                 <div class="featured">
-                    <h3>Destaques</h3>
                     <div class="book-grid" id="bookGrid">
                         <!-- Livros em destaque serão inseridos aqui pelo JavaScript -->
                     </div>
                 </div>
             </section>
 
-            <section class="access">
-                <h2>Como acessar?</h2>
-                <p>Você pode acessar nossa biblioteca de qualquer lugar:</p>
-                <ul>
-                    <li><strong>Online:</strong> Faça login no nosso site com seu CPF ou email.</li>
-                    <li><strong>Nas Estações:</strong> Visite nossas estações de leitura no Cesmar e na Praça Central.</li>
-                </ul>
+            <section class="access-netflix-style">
+                <h2>Como Acessar</h2>
+                <div class="access-options">
+                    <div class="access-option">
+                        <div class="icon">💻</div>
+                        <h3>Online</h3>
+                        <p>Faça login no nosso site com seu CPF ou e-mail a qualquer momento do dia.</p>
+                    </div>
+                    <div class="access-option">
+                        <div class="icon">🏛️</div>
+                        <h3>Nas Estações</h3>
+                        <p>Visite nossas estações de leitura no Cesmar e na Praça Central.</p>
+                    </div>
+                    <div class="access-option">
+                        <div class="icon">📱</div>
+                        <h3>Aplicativo</h3>
+                        <p>Baixe nosso app para iOS e Android e leia offline onde quiser.</p>
+                    </div>
+                </div>
             </section>
 
-            <section class="activities">
+            <section class="clubs-netflix-style">
                 <h2>Atividades e Clubes</h2>
-                <p>Participe dos nossos clubes de leitura e oficinas!</p>
-                <ul>
-                    <li>📚 Clube do Livro - Quinzenalmente</li>
-                    <li>✍️ Oficina de Escrita Criativa - Mensalmente</li>
-                    <li>📖 Hora do Conto (para crianças) - Semanalmente</li>
-                </ul>
+                <div class="club-options">
+                    <div class="club-option">
+                        <div class="icon">📚</div>
+                        <h3>Clube do Livro</h3>
+                        <p>Encontros quinzenais para discussão de leituras variadas com especialistas.</p>
+                        <p class="schedule">Próximo encontro: 15/12/2025</p>
+                    </div>
+                    <div class="club-option">
+                        <div class="icon">✍️</div>
+                        <h3>Oficina de Escrita Criativa</h3>
+                        <p>Aulas práticas de escrita com autores renomados do cenário nacional.</p>
+                        <p class="schedule">Próxima oficina: 20/12/2025</p>
+                    </div>
+                    <div class="club-option">
+                        <div class="icon">🧠</div>
+                        <h3>Mesa de Debates</h3>
+                        <p>Autoramas discursivas sobre temas contemporâneos com a comunidade.</p>
+                        <p class="schedule">Próximo debate: 25/12/2025</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="most-read-books access-netflix-style">
+                <h2>Livros Mais Lidos do Mês</h2>
+                <p>Confira os livros mais populares entre nossos leitores este mês:</p>
+                <div class="book-grid" id="mostReadGrid">
+                    <!-- Os livros mais lidos serão inseridos aqui pelo JavaScript -->
+                </div>
+            </section>
+
+            <section class="book-club-registration clubs-netflix-style">
+                <h2>Inscrição para o Clube do Livro</h2>
+                <p>Abriremos inscrições 5 dias antes do início do clube. Para se inscrever, utilize seu CPF e senha de login.</p>
+                <p>Após o período de inscrição, entraremos em contato pelo nosso número: (11) 98765-4321</p>
+            </section>
+
+            <section class="book-submission access-netflix-style">
+                <h2>Enviar seu próprio livro</h2>
+                <p>Tem um livro próprio que deseja compartilhar conosco? Envie para nosso número de contato: (11) 98765-4321</p>
+                <p>Após o envio, nossa equipe avaliará seu livro e entrará em contato caso atenda aos requisitos para inclusão na biblioteca.</p>
             </section>
         </main>
     </div>
@@ -87,6 +184,67 @@
                 <p>Para testes:</p>
                 <button id="demoLoginBtn" class="btn-secondary">Entrar como Usuário de Demonstração</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Tela de Recuperação de Senha -->
+    <div id="forgotPasswordScreen" class="screen" style="display: none;">
+        <div class="auth-container">
+            <div class="back-arrow">
+                <a href="#" id="forgotPasswordBackToLogin">&larr; Voltar para Login</a>
+            </div>
+            <h2>Recuperação de Senha</h2>
+            <p>Informe seu e-mail para receber um código de recuperação.</p>
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <label for="forgotPasswordEmail">E-mail</label>
+                    <input type="email" id="forgotPasswordEmail" required>
+                </div>
+                <button type="submit" class="btn-primary">Enviar Código</button>
+            </form>
+            <div class="auth-links">
+                <a href="#" id="forgotPasswordBackToLoginAlt">&larr; Voltar para Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Confirmação de Código -->
+    <div id="codeConfirmationScreen" class="screen" style="display: none;">
+        <div class="auth-container">
+            <div class="back-arrow">
+                <a href="#" id="codeConfirmationBackToLogin">&larr; Voltar para Login</a>
+            </div>
+            <h2>Confirmação de Código</h2>
+            <p>Um código de recuperação foi enviado para seu e-mail.</p>
+            <p>Por favor, digite o código de 6 dígitos:</p>
+            <form id="codeConfirmationForm">
+                <div class="form-group">
+                    <input type="text" id="codeInput" placeholder="Código de 6 dígitos" maxlength="6" required>
+                </div>
+                <button type="submit" class="btn-primary">Confirmar Código</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tela de Redefinição de Senha -->
+    <div id="resetPasswordScreen" class="screen" style="display: none;">
+        <div class="auth-container">
+            <div class="back-arrow">
+                <a href="#" id="resetPasswordBackToLogin">&larr; Voltar para Login</a>
+            </div>
+            <h2>Redefinir Senha</h2>
+            <p>Digite sua nova senha:</p>
+            <form id="resetPasswordForm">
+                <div class="form-group">
+                    <label for="newPassword">Nova Senha</label>
+                    <input type="password" id="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Confirmar Nova Senha</label>
+                    <input type="password" id="confirmNewPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Redefinir Senha</button>
+            </form>
         </div>
     </div>
 
@@ -146,9 +304,13 @@
             <div class="back-arrow">
                 <a href="#" id="mainBackToHome">&larr; Voltar para Início</a>
             </div>
-            <h1>📚 Community digital library</h1>
+            <h1>📚 BDC</h1>
+            <p>"Conhecimento é o tesouro mais valioso que podemos compartilhar"</p>
             <div class="user-actions">
-                <span id="userNameDisplay"></span>
+                <div class="user-profile">
+                    <img id="userProfilePic" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%231565c0'/%3E%3Cpath fill='white' d='M12,8c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13.1,8,12,8z M12,14c-2.7,0-5.8,1.3-6,6c0,0,2,0,6,0c3.9,0,6,0,6,0C17.8,15.3,14.7,14,12,14z'/%3E%3C/svg%3E" alt="Perfil" class="profile-pic">
+                    <span id="userNameDisplay"></span>
+                </div>
                 <button id="logoutBtn">Sair</button>
             </div>
         </header>
@@ -160,7 +322,7 @@
                     <input type="text" id="mainSearchInput" placeholder="Buscar por título, autor, gênero ou palavra-chave...">
                     <button id="mainSearchBtn">Buscar</button>
                 </div>
-                
+
                 <div class="category-filter">
                     <label for="categoryFilter">Filtrar por categoria:</label>
                     <select id="categoryFilter">
@@ -176,6 +338,13 @@
                 </div>
             </section>
 
+            <section class="most-read-books-main">
+                <h3>Livros Mais Lidos do Mês</h3>
+                <div class="book-grid" id="mainMostReadGrid">
+                    <!-- Os livros mais lidos serão inseridos aqui pelo JavaScript -->
+                </div>
+            </section>
+
             <section class="resources-section">
                 <h2>Minha Biblioteca</h2>
                 <div class="user-resources">
@@ -183,14 +352,14 @@
                     <button onclick="showHistory()">Histórico</button>
                     <button onclick="showReadingHistory()">Lidos Recentemente</button>
                 </div>
-                
+
                 <div class="favorites-section">
                     <h3>Meus Favoritos</h3>
                     <div class="favorites-grid" id="favoritesGrid">
                         <!-- Livros favoritos serão inseridos aqui -->
                     </div>
                 </div>
-                
+
                 <div class="reading-history">
                     <h3>Lidos Recentemente</h3>
                     <div id="readingHistoryList"></div>
@@ -200,7 +369,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Centro Social Cesmar</p>
+        <p>&copy; 2025 Centro Social Cesmar | Contato: (11) 98765-4321 | <a class="pdf-link" href="biblioteca%20digital%20comunit%C3%A1ria%20slides.pdf" target="_blank" rel="noopener">Abrir Apresentação de Slides</a></p>
     </footer>
 
     <script src="script.js"></script>

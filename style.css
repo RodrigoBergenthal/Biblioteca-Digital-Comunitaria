@@ -7,26 +7,486 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #e3f2fd; /* Azul muito claro */
-    color: #0d47a1; /* Azul escuro */
+    background-color: #f0eee9; /* Tom de fundo baseado na paleta solicitada */
+    color: #3a3833; /* Tom de texto mais suave para combinar com a paleta */
 }
 
 header {
-    background: linear-gradient(135deg, #2196f3, #0d47a1); /* Gradiente azul */
-    color: white;
-    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #dbdbd5, #cac0ae); /* Gradiente com as cores solicitadas */
+    color: #3a3833;
+    padding: 1rem;
     text-align: center;
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+
+.login-signup-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.login-signup-bar button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.login-signup-bar .btn-primary {
+    background-color: #5a5a51; /* Tom mais escuro baseado na paleta */
+    color: white;
+}
+
+.login-signup-bar .btn-primary:hover {
+    background-color: #3a3833; /* Tom ainda mais escuro */
+}
+
+.login-signup-bar .btn-secondary {
+    background-color: #e0e0d9; /* Tom mais claro baseado na paleta */
+    color: #3a3833;
+    border: 1px solid #c9c7bd;
+}
+
+.login-signup-bar .btn-secondary:hover {
+    background-color: #d1cdc3;
+}
+
+header {
+    background: linear-gradient(135deg, #2196f3, #0d47a1); /* Gradiente azul original mantido */
+    color: white;
+    padding: 0 1rem 2rem 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+
+.login-signup-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.login-signup-bar button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.login-signup-bar .btn-primary {
+    background-color: #1565c0;
+    color: white;
+}
+
+.login-signup-bar .btn-primary:hover {
+    background-color: #0d47a1;
+}
+
+.login-signup-bar .btn-secondary {
+    background-color: #f5f5f5;
+    color: #0d47a1;
+    border: 1px solid #90caf9;
+}
+
+.login-signup-bar .btn-secondary:hover {
+    background-color: #e3f2fd;
 }
 
 header h1 {
     font-size: 2.5em;
     margin: 0;
+    color: #3a3833;
 }
 
 header p {
     font-size: 1.3em;
     opacity: 0.9;
     margin-top: 0.5rem;
+    color: #4d4d45;
+}
+
+.tagline {
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    color: #5a5a51;
+}
+
+/* Ajustes para melhorar contraste no cabeçalho e animação da frase de efeito */
+header h1, header p, header .tagline {
+    color: white !important;
+}
+
+.tagline {
+    opacity: 0.95;
+    color: rgba(255,255,255,0.95) !important;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    /* cursor effect (border at the right) */
+    border-right: 3px solid rgba(255,255,255,0.95);
+    padding-right: 6px;
+}
+
+/* Cursor blink animation for typewriter effect */
+@keyframes blinkCursor {
+    0% { border-color: rgba(255,255,255,0.95); }
+    50% { border-color: transparent; }
+    100% { border-color: rgba(255,255,255,0.95); }
+}
+
+.tagline.typewriter {
+    animation: blinkCursor 0.7s steps(1) infinite;
+}
+
+.tagline {
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    color: #5a5a51;
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: #f9f8f5; /* Fundo mais claro da paleta */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid #cac0ae; /* Borda na tonalidade da paleta */
+}
+
+h2 {
+    color: #3a3833;
+    border-bottom: 1px solid #d1cdc3;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+h3 {
+    color: #5a5a51;
+    margin-top: 1.5rem;
+}
+
+/* Botões da tela inicial */
+.home-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #5a5a51; /* Tom mais escuro da paleta */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3a3833; /* Tom ainda mais escuro */
+}
+
+.btn-secondary {
+    background-color: #e0e0d9; /* Tom mais claro da paleta */
+    color: #3a3833;
+    border: 1px solid #c9c7bd;
+}
+
+.btn-secondary:hover {
+    background-color: #d1cdc3; /* Tom intermediário */
+}
+
+/* Estilo para o container do carrossel de destaques */
+.featured-carousel {
+    margin: 2rem 0;
+    padding-bottom: 0;
+}
+
+.featured-carousel h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #3a3833;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(120deg, #dbdbd5, #cac0ae);
+    padding: 2rem 0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-wrapper {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    display: flex;
+}
+
+.book-highlight {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.book-cover-large {
+    flex-shrink: 0;
+    width: 150px;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.book-info-large {
+    text-align: left;
+    flex: 1;
+    max-width: 60%;
+}
+
+.book-info-large h3 {
+    font-size: 1.8em;
+    color: #3a3833;
+    margin: 0 0 0.5rem 0;
+}
+
+.book-info-large .author {
+    font-size: 1.3em;
+    color: #5a5a51;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+}
+
+.book-info-large .description {
+    font-size: 1.1em;
+    color: #4d4d45;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev-btn, .next-btn {
+    background-color: rgba(58, 56, 51, 0.7); /* Mesma cor usada nos títulos */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+    color: white;
+    margin: 0 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(90, 90, 81, 0.9);
+    transform: scale(1.1);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.indicator.active {
+    background-color: #ff9800;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo moderno para seções estilo Netflix */
+.access-netflix-style, .clubs-netflix-style {
+    background: linear-gradient(135deg, #dbdbd5, #cac0ae); /* Paleta de cores solicitada */
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.access-netflix-style h2, .clubs-netflix-style h2 {
+    color: #3a3833; /* Tom escuro da paleta */
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.8em;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.access-options, .club-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.access-option, .club-option {
+    background: linear-gradient(to bottom right, #f5f5f1, #ece5d8); /* Tons da paleta */
+    border-radius: 10px;
+    padding: 1.8rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #d8d2c5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.access-option:hover, .club-option:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    border-color: #c9c2ae;
+}
+
+.access-option .icon, .club-option .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.access-option:hover .icon, .club-option:hover .icon {
+    transform: scale(1.2);
+}
+
+.access-option h3, .club-option h3 {
+    color: #5a5a51; /* Tom médio da paleta */
+    margin: 0.5rem 0 1rem;
+    font-size: 1.4em;
+    transition: color 0.3s ease;
+}
+
+.access-option:hover h3, .club-option:hover h3 {
+    color: #3a3833; /* Tom mais escuro da paleta */
+}
+
+.access-option p, .club-option p {
+    color: #666;
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.club-option .schedule {
+    color: #ff9800;
+    font-weight: bold;
+    margin-top: auto;
+    font-style: italic;
+    padding-top: 1rem;
+    border-top: 1px dashed #ccc;
+}
+
+/* Estilos para outras seções */
+section {
+    background-color: #f9f8f5; /* Fundo mais claro da paleta */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid #cac0ae; /* Borda na tonalidade da paleta */
+}
+
+h2 {
+    color: #3a3833;
+    border-bottom: 1px solid #d1cdc3;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+h3 {
+    color: #5a5a51;
+    margin-top: 1.5rem;
 }
 
 main {
@@ -455,22 +915,184 @@ h3 {
     font-size: 0.8em;
 }
 
-/* Seção de acesso */
-.access ul, .activities ul {
-    padding-left: 1.5rem;
+/* Estilo moderno para seções estilo Netflix */
+.access-netflix-style, .clubs-netflix-style {
+    background: linear-gradient(135deg, #dbdbd5, #cac0ae);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.access li, .activities li {
-    margin-bottom: 0.8rem;
+.access-netflix-style h2, .clubs-netflix-style h2 {
+    color: #0d47a1;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.8em;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.access strong {
+.access-options, .club-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.access-option, .club-option {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.access-option:hover, .club-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.access-option .icon, .club-option .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.access-option h3, .club-option h3 {
+    color: #1565c0;
+    margin: 0.5rem 0;
+    font-size: 1.3em;
+}
+
+.access-option p, .club-option p {
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.club-option .schedule {
+    color: #ff9800;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Estilo para seção de livros mais lidos */
+.most-read-books {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid #2196f3;
+}
+
+/* Estilo para seções de acesso e clubes estilo Netflix */
+.access-netflix-style, .clubs-netflix-style {
+    background: linear-gradient(135deg, #e0e0d9, #d1c9bb);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.access-netflix-style::before, .clubs-netflix-style::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ff9800, #ff5722, #ff9800);
+    animation: gradientShift 3s linear infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.access-netflix-style h2, .clubs-netflix-style h2 {
+    color: #3a3a3a;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.8em;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.access-options, .club-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.access-option, .club-option {
+    background: linear-gradient(to bottom right, #f5f5f1, #ede5d7);
+    border-radius: 10px;
+    padding: 1.8rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #dcd8cc;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.access-option:hover, .club-option:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    border-color: #c9c2ae;
+}
+
+.access-option .icon, .club-option .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.access-option:hover .icon, .club-option:hover .icon {
+    transform: scale(1.2);
+}
+
+.access-option h3, .club-option h3 {
+    color: #5a5a5a;
+    margin: 0.5rem 0 1rem;
+    font-size: 1.4em;
+    transition: color 0.3s ease;
+}
+
+.access-option:hover h3, .club-option:hover h3 {
     color: #1565c0;
 }
 
-/* Seção de atividades */
-.activities li::before {
-    content: "📅 ";
+.access-option p, .club-option p {
+    color: #666;
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.club-option .schedule {
+    color: #ff9800;
+    font-weight: bold;
+    margin-top: auto;
+    font-style: italic;
+    padding-top: 1rem;
+    border-top: 1px dashed #ccc;
+}
+
+/* Reset estilo para seções antigas que não devem mais usar o estilo antigo */
+.access, .activities {
+    display: none; /* Esconde as seções antigas se encontradas */
 }
 
 footer {
@@ -562,6 +1184,11 @@ footer {
     text-decoration: underline;
 }
 
+/* Style for back arrow on main header (where the background is blue) */
+.main-header .back-arrow a {
+    color: white;
+}
+
 .demo-login {
     margin-top: 1.5rem;
     padding-top: 1rem;
@@ -584,11 +1211,185 @@ footer {
     background: linear-gradient(135deg, #2196f3, #0d47a1);
 }
 
+/* ----------------------- */
+/* Warm Earth Header (override recomendado) */
+/* ----------------------- */
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 1rem 2rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, #7B5E57 0%, #E6B89C 100%);
+    color: #ffffff;
+}
+
+/* overlay sutil para aumentar contraste do texto sobre o gradiente */
+header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.18);
+    pointer-events: none;
+}
+
+/* Força cor branca nos textos do header */
+header h1,
+header p,
+header .tagline {
+    color: #ffffff !important;
+}
+
+/* Botões do topo (login / cadastrar) */
+.login-signup-bar .btn-primary {
+    background-color: #5A3E2B;
+    color: #ffffff;
+    border: none;
+}
+.login-signup-bar .btn-primary:hover {
+    background-color: #463022;
+}
+
+.login-signup-bar .btn-secondary {
+    background-color: rgba(255,255,255,0.92);
+    color: #5A3E2B;
+    border: 1px solid rgba(90,62,43,0.12);
+}
+.login-signup-bar .btn-secondary:hover {
+    background-color: #fff;
+}
+
+/* Pequeno ajuste visual para o tagline (mantendo o efeito máquina de escrever) */
+header .tagline {
+    font-style: italic;
+    opacity: 0.95;
+}
+
+/* ----------------------- */
+/* Warm Earth - site-wide theme variables and overrides */
+/* ----------------------- */
+:root {
+    --warm-primary: #5A3E2B; /* primary warm brown */
+    --warm-dark: #463022;    /* darker primary */
+    --warm-secondary: #7B5E57; /* secondary */
+    --warm-accent: #E6B89C;  /* light accent */
+    --warm-bg: #f7efe6;      /* page background */
+    --warm-text: #3a3833;    /* default text */
+}
+
+/* Page background and default text tone */
+body {
+    background-color: var(--warm-bg) !important;
+    color: var(--warm-text) !important;
+}
+
+/* Buttons - global */
+.btn-primary {
+    background-color: var(--warm-primary) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+.btn-primary:hover {
+    background-color: var(--warm-dark) !important;
+}
+
+.btn-secondary {
+    background-color: rgba(255,255,255,0.95) !important;
+    color: var(--warm-primary) !important;
+    border: 1px solid rgba(90,62,43,0.12) !important;
+}
+.btn-secondary:hover {
+    background-color: #fff !important;
+}
+
+/* Main header (when logged in) styling to match header */
+.main-header {
+    background: linear-gradient(135deg, var(--warm-secondary), var(--warm-accent)) !important;
+    color: #ffffff !important;
+}
+.main-header .back-arrow a,
+.main-header h1,
+#userNameDisplay {
+    color: #ffffff !important;
+}
+.profile-pic {
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Sections: use subtle warm border and gentle background */
+section {
+    background: linear-gradient(180deg, #ffffff 0%, var(--warm-bg) 100%) !important;
+    border-left: 5px solid var(--warm-primary) !important;
+}
+
+/* Book cards: accents to blend with theme */
+.book-card {
+    background-color: #ffffff !important;
+    border: 1px solid #ecd6c8 !important;
+}
+.book-info h4 {
+    color: var(--warm-primary) !important;
+}
+
+/* Carousel controls / indicators */
+.prev-btn, .next-btn {
+    background-color: rgba(90,62,43,0.9) !important;
+}
+.indicator.active {
+    background-color: var(--warm-primary) !important;
+}
+
+/* Favorites and counters */
+.count {
+    background-color: var(--warm-accent) !important;
+    color: var(--warm-primary) !important;
+}
+
+/* Links and accents */
+a {
+    color: var(--warm-primary) !important;
+}
+a:hover {
+    color: var(--warm-dark) !important;
+}
+
+/* PDF link in footer: white for visibility on warm header/footer backgrounds */
+.pdf-link {
+    color: #ffffff !important;
+}
+.pdf-link:hover {
+    color: #fff3e6 !important;
+}
+
+/* Footer adjustment to fit theme (keeps high contrast) */
+footer {
+    background: linear-gradient(135deg, var(--warm-secondary), var(--warm-primary));
+    color: #fff;
+}
+
+/* Small responsive tweak: ensure header buttons remain visible on small screens */
+@media (max-width: 600px) {
+    .login-signup-bar { gap: 6px; }
+    .login-signup-bar button { padding: 6px 10px; font-size: 0.85rem; }
+}
+
 .user-actions {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-left: auto;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .back-arrow {
@@ -629,4 +1430,172 @@ footer {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+/* Estilos para o carrossel de destaques */
+.featured-carousel {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.featured-carousel h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #2196f3, #0d47a1);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2.2em;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(120deg, #e3f2fd, #bbdefb);
+    padding: 2rem;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: none;
+    align-items: center;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.carousel-slide.active {
+    display: flex;
+}
+
+.book-highlight {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.book-cover-large {
+    flex-shrink: 0;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.book-info-large {
+    flex: 1;
+    text-align: left;
+    max-width: 60%;
+}
+
+.book-info-large h3 {
+    font-size: 1.8em;
+    color: #0d47a1;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.book-info-large .author {
+    font-size: 1.2em;
+    color: #1565c0;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.book-info-large .description {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev-btn, .next-btn {
+    background-color: rgba(21, 101, 192, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+    color: white;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(13, 71, 161, 0.9);
+    transform: scale(1.1);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.indicator.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo para a seção de boas-vindas abaixo do carrossel */
+.welcome-intro {
+    margin-top: 2rem;
+}
+
+.welcome-intro h2 {
+    text-align: center;
+    color: #0d47a1;
+    margin-bottom: 1rem;
 }
